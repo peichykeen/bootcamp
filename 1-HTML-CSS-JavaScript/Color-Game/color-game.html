@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Guessing Game</title>
+</head>
+<body>
+    <div class="speech-bubble">
+        <div class="arrow bottom right"></div>
+    <h1>Genie Mind Game</h1>
+    <p>"If you can guess what color I am thinking of, maybe I will grant you three wishes!"</p>
+    <button type="button" onclick="runGame()">Wanna try?</button>
+
+    <img src="../../images/toppng.com-aladdin-youtube-jasmine-abu-genie-princess-disney-aladdin-logo-800x444.png" />
+
+    </div>    
+        
+
+    <style>
+
+    body {
+        max-width: 500px;
+        margin: auto;
+        top: 10%;
+        left: 20%;
+        position: absolute;
+        transform: translate(-20%, -10%);
+    }
+
+    img {
+        max-width: 500px;
+        margin: auto;
+        top: 130%;
+        left: 100%;
+        position: absolute;
+        transform: translate(-20%, -10%);
+
+    }
+
+    .speech-bubble {
+        background-color: #f8f8f8;
+        border: 1px solid #c8c8c8;
+        border-radius: 5px;
+        width: 410px;
+        text-align: center;
+        padding: 20px;
+        position: absolute;
+}
+
+    .speech-bubble .arrow {
+        border-style: solid;
+        position: absolute;
+}
+ 
+    .bottom {
+        border-color: #c8c8c8 transparent transparent transparent;
+        border-width: 8px 8px 0px 8px;
+        bottom: -8px;
+        right: 10px;
+}
+
+
+
+    </style>
+
+
+
+
+
+
+
+    <script>
+        const COLORS_ARRAY = ['blue', 'cyan', 'gold', 'gray', 'green', 'magenta', 
+    'orange', 'red', 'white', 'yellow'];
+        COLORS_ARRAY.sort();
+
+ 
+
+        function runGame() {
+            let guess = '';
+            let correct = false;
+            let numTries = 0; 
+            const targetIndex = Math.floor(Math.random() * COLORS_ARRAY.length);
+            const target = COLORS_ARRAY[targetIndex]; 
+
+            do {
+            guess = prompt('I am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') +
+'\n\nWhat color am I thinking of?\n')
+            
+
+            if (guess === null) {
+                alert("Sorry, no wishes for you.")
+                return
+            } 
+            
+            correct = checkGuess(guess.toLowerCase(), target, numTries);
+            numTries +=1;
+            
+        } while (!correct);
+           alert('Correct!  It took you ' + numTries + ' guess(es) to get the correct answer.')
+        }
+        
+        
+        function checkGuess(guess, target, numTries) {
+            let correct = false;
+            
+
+            if (!COLORS_ARRAY.includes(guess)) {
+                numTries +=1
+                alert("This is not a color option.\n\nThis is guess #" + numTries);
+            } 
+            else if (guess > target) {
+                numTries +=1
+                alert("The color is lower than your guess.\n\nThis is guess #" + numTries);
+            } else if (guess < target) {
+                numTries +=1
+                alert("The color is higher than your guess.\n\nThis is guess #" + numTries);
+            } else {
+                document.body.style.background = guess;
+                return correct = true;
+            } 
+        }
+    </script>
+</body>
+</html>

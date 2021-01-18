@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Duck Out</title>
+
+    <style>
+       img {
+           position: absolute;
+       } 
+
+       div {
+           position: absolute;
+           width: 500px;
+           height: 500px;
+       }
+
+       #rightSide {
+           left: 500px;
+           border-left: 1px solid;
+       }
+
+       body {
+           background-image: url(/images/bubbles.jpg);
+           background-size: cover;
+       }
+
+       h1, p {
+           font-family: "Book Antiqua", Palatino, serif;
+           text-align: center;
+           color: #F4B084;
+       }
+
+       p {
+           font-weight: bold;
+       }
+
+       #btn {
+        width: 60px; 
+  margin: 0 auto; 
+  display: block;
+  transition-duration: 0.4s;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #F4B084;
+       }
+
+       #btn:hover {
+        background-color:#F4B084;
+  color: white;
+       }
+
+    </style>
+
+</head>
+<body>
+    <h1>Odd Duck Out</h1>
+    <p>There seems to be an extra duck in the pond.  Can you find it?</p>
+   
+    <button id="btn" type="butotn" onclick="levelSelector()">START</button>
+ 
+
+    <div id="leftSide"></div>
+    <div id="rightSide"></div>
+
+    
+
+
+    <script>
+        let numberOfFaces;
+      
+        const theLeftSide = document.getElementById('leftSide');
+        const theRightSide = document.getElementById('rightSide')
+        let numTries = 0;
+
+ 
+        function levelSelector() {
+        let mode = prompt("Please select your game mode: EASY, NORMAL, DIFFICULT");
+
+        if (mode.toLowerCase() === "easy".toLowerCase()) {
+            alert("Let's get ready to play on " + mode.toLowerCase() + " mode");
+            numberOfFaces = 2;
+            generateFaces();
+        } else if (mode.toLowerCase() === "normal".toLowerCase()) {
+            alert("Let's get ready to play on " + mode.toLowerCase() + " mode");
+            numberOfFaces = 5; 
+            generateFaces();
+        } else if (mode.toLowerCase() === "difficult".toLowerCase()) {
+            alert("Let's get ready to play on " + mode.toLowerCase() + " mode");
+            numberOfFaces = 8;
+            generateFaces();
+        } else 
+            alert("This is not an option.");    
+        }   
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+        function generateFaces() {
+            for (let i = 0; i < numberOfFaces; i++) {
+                face = document.createElement('img');
+                face.src = '/images/ducky.png';
+
+                randomTop = Math.floor(Math.random() * 400) + 1;
+                randomLeft = Math.floor(Math.random() * 400) + 1;
+                face.style.top = randomTop + 'px';
+                face.style.left = randomLeft + 'px';
+                theLeftSide.appendChild(face);
+  
+            }
+
+            const leftSideImages = theLeftSide.cloneNode(true);
+
+            leftSideImages.removeChild(leftSideImages.lastChild);
+            theRightSide.appendChild(leftSideImages);
+
+            theLeftSide.lastChild.addEventListener("click", nextLevel);
+            document.getElementById("btn").addEventListener("click", levelSelector);
+            document.body.addEventListener("dblclick", gameOver);
+
+            
+        }
+
+
+        function nextLevel() {
+            event.stopPropagation();
+            numberOfFaces += 5;
+            
+
+            while (theLeftSide.lastElementChild) {
+                theLeftSide.removeChild(theLeftSide.lastElementChild)
+            }
+
+            while (theRightSide.lastElementChild) {
+                theRightSide.removeChild(theRightSide.lastElementChild)
+            }
+
+    
+            generateFaces();
+            numTries +=1;
+        }
+
+
+
+        function gameOver() {
+            alert("Game Over!\n\nYou completed " + numTries + " round(s).");
+            let c = confirm("Would you like to play again?");
+            if (c === true) {
+              location.reload();
+            } else {
+                alert("Have a great day!");
+            }
+
+            document.body.removeEventListener("click");
+            document.theLeftSide.lastChild("click"); 
+        }
+
+
+    </script>
+
+</body>
+</html>
