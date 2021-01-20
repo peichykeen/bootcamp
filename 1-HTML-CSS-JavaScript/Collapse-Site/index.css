@@ -1,0 +1,164 @@
+@import "https://fonts.googleapis.com/css?family=Lato:100";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Lato", Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #ffe6e6, #ffabe1,#a685e2, #6155a6);
+    animation: change 5s ease-in-out infinite;
+    background-size: 400% 400%;
+    position: relative;
+}
+
+/*h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 3px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5rem 10rem;
+}*/
+
+
+#me {
+    border-radius: 50%;
+    border: dotted #555;
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+h1 {
+    font-family: 'Economica', sans-serif;;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px;
+    text-align: center;
+    color: #555;
+    font-size: 50px;
+  }
+
+  #intro1 {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+p {
+    font-family: 'Economica', sans-serif;;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    padding: 0px;
+    text-align: center;
+    color: #555;
+    font-size: 20px;
+  }
+
+#wrapper { 
+    margin: 0 auto;
+    width: 922px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   }
+
+   
+
+   #leftcolumn { 
+    color: #333;
+    background: #f8f1f1;
+    border-radius: 50px;
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+    height: 500px;
+    width: 375px;
+    float: left;
+    position: absolute;
+    left: 30px;
+   }
+
+   #rightcolumn { 
+    float: right;
+    color: #333;
+    
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    height: 500px;
+    width: 550px;
+    display: inline;
+    position: relative;
+    left: 40px;
+    border-radius: 50px;
+   }
+
+   #header1 {
+    height: 200px;
+    width: 100%;
+    background:#16c79a;
+    clip-path: polygon(50% 100%, 100% 70%, 100% 0, 0 0, 0 70%);
+    position: absolute;
+    border-radius: 50px;
+   }
+
+   .collapsible {
+    background-color: #16c79a;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border-radius: 50px;
+    margin: 10px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-radius: 50px;
+  }
+
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
