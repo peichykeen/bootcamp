@@ -114,6 +114,7 @@ p {
     position: relative;
     left: 40px;
     border-radius: 50px;
+    
    }
 
    #header1 {
@@ -137,6 +138,7 @@ p {
     font-size: 15px;
     border-radius: 50px;
     margin: 10px;
+    outline: none;
   }
   
   .active, .collapsible:hover {
