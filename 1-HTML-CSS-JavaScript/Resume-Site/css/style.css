@@ -180,7 +180,7 @@ figure.effect-oscar:hover p {
 	opacity: 1;
 	-webkit-transform: scale(1);
 	transform: scale(1);
-	color: #ffffff;+++++++
+	color: #ffffff;
 }
 
 figure.effect-oscar:hover figcaption {
@@ -304,7 +304,7 @@ p {
 }
 
 .navStyle ul li:first-child {
-	/*margin:0px;*/;
+	/*margin:0px;*/
 }
 
 .navStyle ul li:last-child {
@@ -407,7 +407,7 @@ p {
 }
 
 .top_left_cont {
-    padding: 100px 50px 100px 0;
+    padding: 100px 50px 0px 0;
 }
 
 .top_left_cont h3 {
@@ -475,6 +475,7 @@ a.read_more:hover {
 	padding:110px 0;
 }
 .timeline h2{ 
+
 }
 
 
@@ -496,6 +497,7 @@ a.read_more:hover {
 }
 
 .service_section {
+    
 }
 
 .service_block {
@@ -583,7 +585,7 @@ a.read_more:hover {
 }
 
 .service-list-col1 i {
-    display:;
+    /*display:;*/
     color: #888;
     font-size: 19px;
     font-style: normal;
@@ -2308,7 +2310,7 @@ margin: 0 18px;
 .page_section.team{
 padding: 40px 0;
 }
-, #clients {
+ #clients {
 padding: 40px 0;
 }
 .client_logos ul li {
