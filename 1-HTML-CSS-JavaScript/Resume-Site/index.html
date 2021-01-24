@@ -459,10 +459,10 @@
         <div class="col-lg-8 wow fadeInLeft delay-06s">
          	  <!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
         
-		<form name="sentMessage" id="contactForm"  novalidate> 
+		<form name="contactForm" method="POST" id="contactForm"  netlify> 
 		 <div class="control-group">
                     <div class="controls">
-			<input type="text" class="form-control" 
+			<input name="name" type="text" class="form-control" 
 			   	   placeholder="Full Name" id="name" required
 			           data-validation-required-message="Please enter your name" />
 			  <p class="help-block"></p>
@@ -470,7 +470,7 @@
 	         </div> 	
                 <div class="control-group">
                   <div class="controls">
-			<input type="email" class="form-control" placeholder="Email" 
+			<input name="email" type="email" class="form-control" placeholder="Email" 
 			   	            id="email" required
 			   		   data-validation-required-message="Please enter your email" />
 		</div>
@@ -478,7 +478,7 @@
 			  
                <div class="control-group">
                  <div class="controls">
-				 <textarea rows="10" cols="100" class="form-control" 
+				 <textarea name="contactForm" rows="10" cols="100" class="form-control" 
                        placeholder="Message" id="message" required
 		       data-validation-required-message="Please enter your message" minlength="5" 
                        data-validation-minlength-message="Min 5 characters" 
