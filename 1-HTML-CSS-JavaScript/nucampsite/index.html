@@ -31,7 +31,7 @@
                     <h2>a better way to camp</h2>
                 </div>
                 <div class="col col-md-4 col-xl-2 col-xs mt-4">
-                    <a class="text-nowrap" href="#reserveForm"><button class="btn btn-lg bg-info text-white">Reserve Campsite</button></a>
+                    <a class="text-nowrap" href="#reserveForm" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Or call us at <br/> <strong>1-206-555-1234</strong>"><button class="btn btn-lg bg-info text-white">Reserve Campsite</button></a>
                 </div>
             </div>
         </div>
@@ -50,9 +50,51 @@
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i>Sites</a></li>
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i>Contact</a></li>
                 </ul>
+                <span class="navbar-text ml-auto">
+                    <a role="button" data-toggle="modal" data-target="#loginModal">
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
+                </span>
             </div>
         </div>
     </nav>
+
+    <div class="modal fade" role="dialog" id="loginModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginPassword">Password</label>
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input">
+                                        <label class="form-check-label"> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button class="btn btn-secondary btn-sm ml-auto" type="button" data-dismiss="modal">Cancel</button>
+                                <button class="btn btn-primary btn-sm ml-1" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <div class="container">
             <div class="row row-content align-items-center">
@@ -171,6 +213,11 @@
     <script src="/2-Bootstrap/node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="/2-Bootstrap/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 
 </html>
