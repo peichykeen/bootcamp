@@ -1,0 +1,36 @@
+
+.navbar {
+    background-color:white;
+    
+  }
+  
+.navbar a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+.navbar-nav {
+      margin-left: auto;
+  }
+
+.nav-link {
+      color: black;
+  }
+
+
+.container1 {
+      background-color: #6C63FF;
+  }
+
+.container2 {
+    background-color: #FFB663;
+}
+
+.container-fluid h1 {
+    text-align: center;
+}
+
+
+
